@@ -13,10 +13,10 @@ public class Model {
 
 		simulatore.setMediciDisponibili(1);
 
-		simulatore.aggiungiPaziente(new Paziente(1, Paziente.StatoPaziente.ROSSO));
-		simulatore.aggiungiPaziente(new Paziente(2, Paziente.StatoPaziente.ROSSO));
-		simulatore.aggiungiPaziente(new Paziente(3, Paziente.StatoPaziente.ROSSO));
-		simulatore.aggiungiPaziente(new Paziente(4, Paziente.StatoPaziente.ROSSO));
+		//simulatore.aggiungiPaziente(new Paziente(1, Paziente.StatoPaziente.RED));
+		//simulatore.aggiungiPaziente(new Paziente(2, Paziente.StatoPaziente.RED));
+		//simulatore.aggiungiPaziente(new Paziente(3, Paziente.StatoPaziente.RED));
+		//simulatore.aggiungiPaziente(new Paziente(4, Paziente.StatoPaziente.RED));
 
 		simulatore.aggiungiEvento(new Evento(10, Evento.TipoEvento.PAZIENTE_ARRIVA, 1));
 		simulatore.aggiungiEvento(new Evento(11, Evento.TipoEvento.PAZIENTE_ARRIVA, 2));

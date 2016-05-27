@@ -1,5 +1,6 @@
 package it.polito.tdp.emergency;
 
+import it.polito.tdp.emergency.model.Modello;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -10,7 +11,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("Emergency.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Emergency.fxml"));
+			BorderPane root = (BorderPane) loader.load();
+			Modello model = new Modello();
+			EmergencyController controller = loader.getController();
+			controller.setModel(model);
 			Scene scene = new Scene(root, 400, 400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);

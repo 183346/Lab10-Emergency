@@ -57,15 +57,15 @@ public class Core {
 			System.out.println("Arrivo paziente:" + e);
 			pazientiInAttesa.add(pazienti.get(e.getDato()));
 			switch (pazienti.get(e.getDato()).getStato()) {
-			case BIANCO:
+			case White:
 				break;
-			case GIALLO:
+			case Yellow:
 				this.aggiungiEvento(new Evento(e.getTempo() + 6 * 60, Evento.TipoEvento.PAZIENTE_MUORE, e.getDato()));
 				break;
-			case ROSSO:
+			case Red:
 				this.aggiungiEvento(new Evento(e.getTempo() + 1 * 60, Evento.TipoEvento.PAZIENTE_MUORE, e.getDato()));
 				break;
-			case VERDE:
+			case Green:
 				this.aggiungiEvento(new Evento(e.getTempo() + 12 * 60, Evento.TipoEvento.PAZIENTE_MUORE, e.getDato()));
 				break;
 			default:
@@ -85,6 +85,7 @@ public class Core {
 				System.out.println("Paziente gi� salvato: " + e);
 			} else {
 				++pazientiPersi;
+				
 				pazienti.get(e.getDato()).setStato(Paziente.StatoPaziente.NERO);
 				System.out.println("Paziente morto: " + e);
 				if (pazienti.get(e.getDato()).getStato() == Paziente.StatoPaziente.IN_CURA) {
@@ -102,6 +103,7 @@ public class Core {
 
 	protected boolean cura(long adesso) {
 		if (pazientiInAttesa.isEmpty())
+			
 			return false;
 		if (mediciDisponibili == 0)
 			return false;

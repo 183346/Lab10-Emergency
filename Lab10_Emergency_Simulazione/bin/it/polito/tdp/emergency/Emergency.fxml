@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.emergency.EmergencyController">
-	<!-- TODO Add Nodes -->
+
+<BorderPane prefHeight="312.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.emergency.EmergencyController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="41.0" prefWidth="306.0" spacing="20.0">
+               <children>
+                  <Label text="Nome dottore" />
+                  <TextField fx:id="txtDottore" prefHeight="25.0" prefWidth="200.0" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="306.0" spacing="6.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="95.0" text="Ore sfalsamento" />
+                  <TextField fx:id="txtOre" prefHeight="25.0" prefWidth="196.0" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="306.0" spacing="50.0">
+               <children>
+                  <Button fx:id="btnInserisci" mnemonicParsing="false" onAction="#doInserisci" text="Inserisci dottore" />
+                  <Button fx:id="btnSimula" mnemonicParsing="false" onAction="#doSimula" text="Simula" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <TextArea fx:id="txtResult" editable="false" prefHeight="188.0" prefWidth="306.0" promptText="Output" />
+         </children>
+      </VBox>
+   </center>
 </BorderPane>

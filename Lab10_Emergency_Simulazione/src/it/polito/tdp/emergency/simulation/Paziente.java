@@ -14,16 +14,29 @@ package it.polito.tdp.emergency.simulation;
 
 public class Paziente implements Comparable<Paziente> {
 	public enum StatoPaziente {
-		ROSSO, GIALLO, VERDE, BIANCO, IN_CURA, SALVO, NERO
+		Red, Yellow, Green, White, IN_CURA, SALVO, NERO
 	};
 
 	private int id;
+	private String nome;
 	private StatoPaziente stato;
+	private int codiceDottore;
 
 	@Override
 	public int hashCode() {
 		return id;
 	}
+	
+
+	public int getCodiceDottore() {
+		return codiceDottore;
+	}
+
+
+	public void setCodiceDottore(int codiceDottore) {
+		this.codiceDottore = codiceDottore;
+	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -51,20 +64,33 @@ public class Paziente implements Comparable<Paziente> {
 		return id;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Paziente [id=" + id + ", stato=" + stato + "]";
+		return "Paziente [id=" + id + ", nome=" + nome + ", stato=" + stato + ", codiceDottore=" + codiceDottore + "]";
 	}
 
-	public Paziente(int id, StatoPaziente stato) {
+
+	public Paziente(int id, String nome, StatoPaziente stato) {
 		super();
 		this.id = id;
+		this.nome=nome;
 		this.stato = stato;
+	}
+	
+
+	public Paziente() {
+		super();
 	}
 
 	@Override
 	public int compareTo(Paziente arg0) {
 		return Integer.compare(this.getStato().ordinal(), arg0.getStato().ordinal());
+	}
+
+	public String getNome() {
+		return nome;
 	}
 
 }

@@ -24,7 +24,7 @@ public class Evento implements Comparable<Evento> {
 	}
 
 	public enum TipoEvento {
-		PAZIENTE_ARRIVA, PAZIENTE_GUARISCE, PAZIENTE_MUORE
+		PAZIENTE_ARRIVA, PAZIENTE_GUARISCE, PAZIENTE_MUORE, DOCTOR_INIZIA_TURNO,DOCTOR_FINE_TURNO
 	}
 
 	protected long tempo;
@@ -49,6 +49,14 @@ public class Evento implements Comparable<Evento> {
 	@Override
 	public int compareTo(Evento arg0) {
 		return Long.compare(this.tempo, arg0.tempo);
+		//return (int) (this.tempo-arg0.getTempo());
 	}
+
+	
+
+	
+
+
+
 
 }
